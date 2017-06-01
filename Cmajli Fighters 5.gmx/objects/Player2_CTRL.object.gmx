@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>set_player_input(2);
+            <string>type_of_input = 2;
+set_player_input(type_of_input);
 </string>
           </argument>
         </arguments>

@@ -25,8 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(100,room_height/2,Player1_CTRL.character_selected);
-instance_create(room_width-100,room_height/2,Player2_CTRL.character_selected);
+            <string>with instance_create(100,room_height/2,tranfer_character_from_selectable_to_playable(Player1_CTRL.character_selected)){
+    set_player_input(Player1_CTRL.type_of_input);
+}
+
+with instance_create(room_width-100,room_height/2,tranfer_character_from_selectable_to_playable(Player2_CTRL.character_selected)){
+    set_player_input(Player2_CTRL.type_of_input);
+}
 </string>
           </argument>
         </arguments>
