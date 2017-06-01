@@ -18,9 +18,32 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\script0.gml</script>
-    <script>scripts\script1.gml</script>
+    <script>scripts\player_movement.gml</script>
+    <script>scripts\set_player_input.gml</script>
   </scripts>
+  <objects name="objects">
+    <objects name="CONTROLLERS">
+      <object>objects\Game_CTRL</object>
+      <object>objects\CharSelection_CTRL</object>
+    </objects>
+    <objects name="CHARACTERS">
+      <object>objects\obj_player_parent</object>
+      <object>objects\obj_tunglidj</object>
+      <object>objects\obj_booby</object>
+      <object>objects\obj_dixie</object>
+      <object>objects\obj_shiftvan</object>
+    </objects>
+    <objects name="MAIN MENU">
+      <object>objects\obj_button_parent</object>
+      <object>objects\obj_button_start</object>
+      <object>objects\obj_button_quit</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_character_selection</room>
+    <room>rooms\rm_battle</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>

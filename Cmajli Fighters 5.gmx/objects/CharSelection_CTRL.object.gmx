@@ -28,10 +28,10 @@
             <string>list_of_characters = ds_list_create();
 ds_list_add(list_of_characters,spr_shiftvan,spr_tunglidj,spr_booby,spr_dixie);
 list_of_characters_size = ds_list_size(list_of_characters);
-my_room_width_half = room_width/2
-my_room_height_half = room_height/2
+my_room_width_half = room_width/2;
+my_room_height_half = room_height/2;
 
-total_size_of_chars = list_of_characters_size * 50
+total_size_of_chars = list_of_characters_size * 50;
 selected_character_index = 0;
 
 target_sprite = ds_list_find_value(list_of_characters,selected_character_index);
