@@ -6,12 +6,14 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_tunglidj</sprite>
-    <sprite>sprites\spr_booby</sprite>
-    <sprite>sprites\spr_dixie</sprite>
-    <sprite>sprites\spr_shiftvan</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_character_selector</sprite>
+    <sprites name="CHARACTERS">
+      <sprite>sprites\spr_booby</sprite>
+      <sprite>sprites\spr_tunglidj</sprite>
+      <sprite>sprites\spr_dixie</sprite>
+      <sprite>sprites\spr_shiftvan</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgr_terrain</background>
@@ -25,13 +27,23 @@
     <objects name="CONTROLLERS">
       <object>objects\Game_CTRL</object>
       <object>objects\CharSelection_CTRL</object>
+      <object>objects\Player1_CTRL</object>
+      <object>objects\Player2_CTRL</object>
+      <object>objects\Battle_CTRL</object>
+    </objects>
+    <objects name="CHARACTER SELECTION">
+      <object>objects\obj_character_selection_parent</object>
+      <object>objects\obj_character_selection_tunglidj</object>
+      <object>objects\obj_character_selection_booby</object>
+      <object>objects\obj_character_selection_dixie</object>
+      <object>objects\obj_character_selection_shiftvan</object>
     </objects>
     <objects name="CHARACTERS">
-      <object>objects\obj_player_parent</object>
-      <object>objects\obj_tunglidj</object>
-      <object>objects\obj_booby</object>
-      <object>objects\obj_dixie</object>
-      <object>objects\obj_shiftvan</object>
+      <object>objects\obj_character_parent</object>
+      <object>objects\obj_character_tunglidj</object>
+      <object>objects\obj_character_booby</object>
+      <object>objects\obj_character_dixie</object>
+      <object>objects\obj_character_shiftvan</object>
     </objects>
     <objects name="MAIN MENU">
       <object>objects\obj_button_parent</object>

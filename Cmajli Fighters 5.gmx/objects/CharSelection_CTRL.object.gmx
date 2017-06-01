@@ -26,15 +26,68 @@
           <argument>
             <kind>1</kind>
             <string>list_of_characters = ds_list_create();
-ds_list_add(list_of_characters,spr_shiftvan,spr_tunglidj,spr_booby,spr_dixie);
-list_of_characters_size = ds_list_size(list_of_characters);
+ds_list_add(list_of_characters,obj_character_selection_shiftvan,obj_character_selection_tunglidj,obj_character_selection_booby,obj_character_selection_dixie);
+list_of_characters_length = ds_list_size(list_of_characters);
+
 my_room_width_half = room_width/2;
 my_room_height_half = room_height/2;
+selection_character_width = 104;
+selection_character_height = 104;
 
-total_size_of_chars = list_of_characters_size * 50;
-selected_character_index = 0;
+initial_position_x = my_room_width_half - 3*selection_character_width;
+initial_position_y = my_room_height_half;
 
-target_sprite = ds_list_find_value(list_of_characters,selected_character_index);
+for (var i = 0; i &lt; list_of_characters_length; i++){
+    var object_to_create = ds_list_find_value(list_of_characters,i);
+    position_x = initial_position_x + i*selection_character_width;
+    position_y = initial_position_y;
+    instance_create(position_x,position_y,object_to_create);
+}
+
+selected_character_index_player1 = 0;
+choosen_character_player1 = ds_list_find_value(list_of_characters,selected_character_index_player1);
+selected_character_index_player2 = list_of_characters_length-1;
+choosen_character_player2 = ds_list_find_value(list_of_characters,selected_character_index_player2);
+
+player1_confirmed_choice = false;
+player2_confirmed_choice = false;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//CHECK THE CONFIRM KEY
+if (keyboard_check_pressed(Player1_CTRL.CONFIRM_KEY)){
+    player1_confirmed_choice = true;
+    Player1_CTRL.character_selected = ds_list_find_value(list_of_characters, selected_character_index_player1);
+}
+
+if (keyboard_check_pressed(Player2_CTRL.CONFIRM_KEY)){
+    player2_confirmed_choice = true;
+    Player2_CTRL.character_selected = ds_list_find_value(list_of_characters, selected_character_index_player2);
+}
+
+if (player1_confirmed_choice &amp;&amp; player2_confirmed_choice){
+    room_goto(rm_battle);
+}
 </string>
           </argument>
         </arguments>
@@ -57,58 +110,57 @@ target_sprite = ds_list_find_value(list_of_characters,selected_character_index);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>for(var i=0 ; i&lt;list_of_characters_size; i++){
-    target_sprite = ds_list_find_value(list_of_characters,i);
-    //draw_sprite(target_sprite,0,i*100 +100,200);
-    //draw_sprite(target_sprite,0,room_width - i*100 -100,200);
+            <string>//FOR PLAYER 1
+if (!player1_confirmed_choice){
+    if (keyboard_check_pressed(Player1_CTRL.RIGHT_KEY)){
+        if (selected_character_index_player1 &lt; list_of_characters_length-1){
+            selected_character_index_player1++;
+            choosen_character_player1 = ds_list_find_value(list_of_characters,selected_character_index_player1);
+        }else{
+            selected_character_index_player1 = 0;
+            choosen_character_player1 = ds_list_find_value(list_of_characters,selected_character_index_player1);
+        }
+    }
+     
+    if (keyboard_check_pressed(Player1_CTRL.LEFT_KEY)){
+        if (selected_character_index_player1 &gt; 0){    
+            selected_character_index_player1--;
+            choosen_character_player1 = ds_list_find_value(list_of_characters,selected_character_index_player1);
+        }else{
+            selected_character_index_player1 = list_of_characters_length-1;
+            choosen_character_player1 = ds_list_find_value(list_of_characters,selected_character_index_player1);
+        }
+    }
     
-   draw_sprite(target_sprite,0,my_room_width_half - total_size_of_chars + i*100,my_room_height_half);
+    draw_sprite(spr_character_selector,0,choosen_character_player1.x,choosen_character_player1.y);
+}
+    
+
+//FOR PLAYER 2
+if (!player2_confirmed_choice){
+    if (keyboard_check_pressed(Player2_CTRL.RIGHT_KEY)){
+        if (selected_character_index_player2 &lt; list_of_characters_length-1){
+            selected_character_index_player2++;
+            choosen_character_player2 = ds_list_find_value(list_of_characters,selected_character_index_player2);
+        }else{
+            selected_character_index_player2 = 0;
+            choosen_character_player2 = ds_list_find_value(list_of_characters,selected_character_index_player2);
+        }
+    }
+     
+    if (keyboard_check_pressed(Player2_CTRL.LEFT_KEY)){
+        if (selected_character_index_player2 &gt; 0){    
+            selected_character_index_player2--;
+            choosen_character_player2 = ds_list_find_value(list_of_characters,selected_character_index_player2);
+        }else{
+            selected_character_index_player2 = list_of_characters_length-1;
+            choosen_character_player2 = ds_list_find_value(list_of_characters,selected_character_index_player2);
+        }
+    }
+     
+    draw_sprite(spr_character_selector,1,choosen_character_player2.x,choosen_character_player2.y);
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="68">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="65">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
           </argument>
         </arguments>
       </action>
