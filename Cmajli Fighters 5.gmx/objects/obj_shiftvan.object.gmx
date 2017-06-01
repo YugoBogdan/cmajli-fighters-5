@@ -40,8 +40,12 @@
           <argument>
             <kind>1</kind>
             <string>///init var
-player_team = 1
-move_speed = 5
+player_team = 2
+move_speed = 10
+
+Follow_mouse = 1;
+rotation_speed = 90;
+
 </string>
           </argument>
         </arguments>

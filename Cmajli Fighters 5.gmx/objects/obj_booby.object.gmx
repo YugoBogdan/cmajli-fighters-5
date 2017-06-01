@@ -40,7 +40,7 @@
           <argument>
             <kind>1</kind>
             <string>///init var
-player_team = 2
+player_team = 1
 move_speed = 5
 </string>
           </argument>

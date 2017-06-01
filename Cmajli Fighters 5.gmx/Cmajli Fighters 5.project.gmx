@@ -20,6 +20,7 @@
   <scripts name="scripts">
     <script>scripts\player_movement.gml</script>
     <script>scripts\set_player_input.gml</script>
+    <script>scripts\player_mouse_follow.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="CONTROLLERS">
@@ -40,9 +41,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_battle</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_character_selection</room>
-    <room>rooms\rm_battle</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
