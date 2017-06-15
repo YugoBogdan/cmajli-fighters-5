@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>type_of_input = 1;
+team = 1;
 set_player_input(type_of_input);
 </string>
           </argument>

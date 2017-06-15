@@ -10,9 +10,11 @@
     <sprite>sprites\spr_character_selector</sprite>
     <sprites name="CHARACTERS">
       <sprite>sprites\spr_booby</sprite>
-      <sprite>sprites\spr_tunglidj</sprite>
       <sprite>sprites\spr_dixie</sprite>
+      <sprite>sprites\spr_tunglidj</sprite>
       <sprite>sprites\spr_shiftvan</sprite>
+      <sprite>sprites\spr_jaje</sprite>
+      <sprite>sprites\spr_mali_ker</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -22,8 +24,21 @@
   <scripts name="scripts">
     <script>scripts\player_movement.gml</script>
     <script>scripts\set_player_input.gml</script>
+    <script>scripts\set_spells.gml</script>
+    <script>scripts\cast_spell.gml</script>
     <script>scripts\player_mouse_follow.gml</script>
     <script>scripts\tranfer_character_from_selectable_to_playable.gml</script>
+    <scripts name="CHARACTERS">
+      <scripts name="TUNGLIDJ">
+        <script>scripts\tunglidj_basic_attack.gml</script>
+      </scripts>
+      <scripts name="DIXIE">
+        <script>scripts\dixie_basic_attack.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="utils">
+      <script>scripts\subscribe_to_team.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="CONTROLLERS">
@@ -51,6 +66,10 @@
       <object>objects\obj_button_parent</object>
       <object>objects\obj_button_start</object>
       <object>objects\obj_button_quit</object>
+    </objects>
+    <objects name="TUNGLIDJ">
+      <object>objects\obj_egg</object>
+      <object>objects\obj_zerg</object>
     </objects>
   </objects>
   <rooms name="rooms">
