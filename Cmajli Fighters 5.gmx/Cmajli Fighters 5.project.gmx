@@ -13,8 +13,15 @@
       <sprite>sprites\spr_dixie</sprite>
       <sprite>sprites\spr_tunglidj</sprite>
       <sprite>sprites\spr_shiftvan</sprite>
-      <sprite>sprites\spr_jaje</sprite>
-      <sprite>sprites\spr_mali_ker</sprite>
+    </sprites>
+    <sprites name="SPELLS">
+      <sprites name="TUNGLIDJ">
+        <sprite>sprites\spr_jaje</sprite>
+        <sprite>sprites\spr_mali_ker</sprite>
+      </sprites>
+      <sprites name="DIXIE">
+        <sprite>sprites\spr_bullet</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -67,9 +74,14 @@
       <object>objects\obj_button_start</object>
       <object>objects\obj_button_quit</object>
     </objects>
-    <objects name="TUNGLIDJ">
-      <object>objects\obj_egg</object>
-      <object>objects\obj_zerg</object>
+    <objects name="SPELLS">
+      <objects name="TUNGLIDJ">
+        <object>objects\obj_egg</object>
+        <object>objects\obj_zerg</object>
+      </objects>
+      <objects name="DIXIE">
+        <object>objects\obj_bullet</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

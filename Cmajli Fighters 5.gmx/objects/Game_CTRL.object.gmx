@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>instance_create(0,0,Player1_CTRL);
 instance_create(0,0,Player2_CTRL);
+
+global.room_width_half = room_width/2;
+global.room_height_half = room_height/2;
 </string>
           </argument>
         </arguments>
