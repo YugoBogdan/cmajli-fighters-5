@@ -9,6 +9,8 @@ switch (type_of_input){
         UP_KEY = vk_up;
         DOWN_KEY = vk_down;
         BASIC_ATTACK = vk_numpad0;
+        SECOND_SPELL = vk_numpad1;
+        THIRD_SPELL = vk_numpad2;
         CONFIRM_KEY = vk_enter;
     break;
     case 2:
@@ -17,6 +19,8 @@ switch (type_of_input){
         UP_KEY = ord('W');
         DOWN_KEY = ord('S');
         BASIC_ATTACK = ord('T');
+        SECOND_SPELL = ord('Y');
+        THIRD_SPELL = ord('U');
         CONFIRM_KEY = vk_space;
     break;
 }

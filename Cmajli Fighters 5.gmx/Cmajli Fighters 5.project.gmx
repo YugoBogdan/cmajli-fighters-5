@@ -21,6 +21,7 @@
       </sprites>
       <sprites name="DIXIE">
         <sprite>sprites\spr_bullet</sprite>
+        <sprite>sprites\spr_boomba</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -41,6 +42,8 @@
       </scripts>
       <scripts name="DIXIE">
         <script>scripts\dixie_basic_attack.gml</script>
+        <script>scripts\dixie_second_spell.gml</script>
+        <script>scripts\dixie_third_spell.gml</script>
       </scripts>
     </scripts>
     <scripts name="utils">
@@ -81,6 +84,7 @@
       </objects>
       <objects name="DIXIE">
         <object>objects\obj_bullet</object>
+        <object>objects\obj_boomba</object>
       </objects>
     </objects>
   </objects>
