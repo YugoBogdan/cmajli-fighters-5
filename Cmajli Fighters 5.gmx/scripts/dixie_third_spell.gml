@@ -1,11 +1,15 @@
-show_message("treci spell")
+//show_message("treci spell")
 
-/*with (instance_create(x,y,obj_bullet)){
+with (instance_create(x-lengthdir_x(sprite_width,image_angle+30),y+lengthdir_y(sprite_width,image_angle+30),obj_sacma)){
     var random_angle_effect = 1 - irandom(2);
     var angle = point_direction(x,y,global.room_width_half,global.room_height_half) + random_angle_effect;
-    var spd = 30;
-    motion_set(angle,spd);
     image_angle = angle;
 }
-*/
+
+with (instance_create(x-lengthdir_x(sprite_width,image_angle-30),y+lengthdir_y(sprite_width,image_angle-30),obj_sacma)){
+    var random_angle_effect = 1 - irandom(2);
+    var angle = point_direction(x,y,global.room_width_half,global.room_height_half) + random_angle_effect;
+    image_angle = angle;
+}
+
 

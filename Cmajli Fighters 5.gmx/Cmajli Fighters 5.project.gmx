@@ -22,6 +22,7 @@
       <sprites name="DIXIE">
         <sprite>sprites\spr_bullet</sprite>
         <sprite>sprites\spr_boomba</sprite>
+        <sprite>sprites\spr_sacma</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -85,6 +86,7 @@
       <objects name="DIXIE">
         <object>objects\obj_bullet</object>
         <object>objects\obj_boomba</object>
+        <object>objects\obj_sacma</object>
       </objects>
     </objects>
   </objects>
